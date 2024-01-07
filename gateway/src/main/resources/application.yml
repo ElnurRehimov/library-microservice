@@ -8,14 +8,10 @@ spring:
           uri: lb://book-service
           predicates:
             - Path=/v1/book/**
-          filters:
-            - name: AuthenticationFilterFactory
         - id: library-service
           uri: lb://library-service
           predicates:
             - Path=/v1/library/**
-          filters:
-            - name: AuthenticationFilterFactory
       discovery:
         locator:
           enabled: true
